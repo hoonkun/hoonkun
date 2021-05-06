@@ -1,0 +1,44 @@
+.projects_container {
+    margin-top: 2rem;
+}
+
+.project {
+    padding: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-bottom: 1.5rem;
+}
+
+.project_img {
+    width: 100%;
+    height: auto;
+}
+
+.project_img + .project_title {
+    margin-top: 1.2rem;
+}
+
+.project_title {
+    font-size: 1.7rem;
+}
+
+.project_desc {
+    margin-top: 0.8rem;
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 180%;
+}
+
+.project_hashtag {
+    color: #00aeff;
+    font-size: 1.3rem;
+}
+
+.project_code {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+a {
+    color: rgba(255, 255, 255, 1);
+}

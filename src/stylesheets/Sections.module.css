@@ -1,0 +1,246 @@
+.Sections {
+    width: 200%;
+    
+    display: flex;
+    flex-direction: row;
+}
+
+.TwitterSection {
+    position: relative;
+    left: -50%;
+}
+
+.NormalSection {
+    
+}
+
+.Section {
+    width: 100%;
+}
+
+.SectionTitle {
+    font-size: 2rem;
+    margin-left: -5px;
+}
+
+.SectionTitle span {
+    padding-left: 5px;
+    padding-right: 5px;
+}  
+
+.NormalSection .SectionTitle span {
+    background-color: rgba(226, 100, 23, 0.2);
+}
+
+.TwitterSection .SectionTitle span {
+    background-color: rgba(29, 161, 242, 0.2);
+}
+
+.SectionTitle :nth-child(n+2) {
+    margin-top: 15px;
+}
+
+.SectionSubtitle {
+    margin-top: 20px;
+    font-size: 1.75rem;
+    /*padding-left: 20px;*/
+}
+
+.SectionContent {
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.85);
+    /*padding-left: 20px;*/
+    margin-top: 5px;
+}
+
+.SectionContent ul {
+    margin: 0;
+    list-style-type: none;
+    padding-inline-start: 10px;
+    text-indent: -7px;
+}
+
+.SectionContent ul > li:before {
+    content: "- ";
+    text-indent: -7px;
+    opacity: 0.8;
+}
+
+.SectionController {
+    
+}
+
+.SectionControllerItemGroup {
+    display: flex;
+    flex-direction: row;
+    
+    font-size: 2.5rem;
+}
+
+.SectionControllerItem {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.SectionControllerItem:nth-child(2) {
+    margin-left: 30px;
+}
+
+.SectionControllerItemText {
+    transition: opacity 0.2s linear;
+    cursor: default;
+}
+
+.SectionControllerIndicator {
+    width: 0;
+    display: inline-block;
+    
+    height: 3px;
+    top: -7px;
+    
+    position: relative;
+    transition: left 0.4s cubic-bezier(0.33, 1, 0.68, 1), background-color 0.25s linear, width 0.2s linear;
+}
+
+.SectionAnimating {
+    display: block;
+    animation-duration: 0.3s;
+    animation-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.FirstSectionVisible {
+    width: 50%;
+    display: block;
+}
+
+.FirstSectionInvisible {
+    display: none;
+}
+
+.SecondSectionVisible {
+    width: 50%;
+    display: block;
+    left: 0;
+}
+
+.SecondSectionInvisible {
+    display: none;
+}
+
+.FirstSectionHide {
+    animation-name: SectionSlideToLeft;
+}
+
+.FirstSectionShow {
+    animation-name: SectionSlideFromLeft;
+}
+
+.SecondSectionHide {
+    animation-name: SectionSlideToRight;
+}
+
+.SecondSectionShow {
+    animation-name: SectionSlideFromRight;
+}
+
+.Ability p {
+    text-indent: 3px;
+}
+
+.Ability > li {
+    margin-bottom: 10px;
+}
+
+.ContainsNarrowItem {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.NarrowListItem {
+    width: 30%;
+    display: inline-block;
+}
+
+.ImageGroup {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+    margin-top: 15px;
+}
+
+.ImageGroup img {
+    width: 49%;
+    height: auto;
+}
+
+.ImageGroup img:nth-child(n+3){
+    margin-top: 7px;
+}
+
+.ImageGroup img:nth-child(5) {
+    width: 100% !important;
+}
+
+@keyframes SectionSlideFromRight {
+    
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
+}
+
+@keyframes SectionSlideFromLeft {
+    
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
+}
+
+@keyframes SectionSlideToRight {
+    
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
+    to {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    
+}
+
+@keyframes SectionSlideToLeft {
+    
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
+    to {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    
+}
+
