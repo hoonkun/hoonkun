@@ -14,12 +14,12 @@ class Section extends React.Component {
     constructor(props) {
         super(props);
 
-        this.PATH_NORMAL = "/";
-        this.PATH_TWITTER = "/twitter";
+        this.PATH_NORMAL = "";
+        this.PATH_TWITTER = "twitter";
 
         this.state = {
-            type: window.location.pathname,
-            visible_type: window.location.pathname,
+            type: props.match.params.type,
+            visible_type: props.match.params.type,
             indicator_width: 50,
             indicator_pos: 20,
             indicator_color: "#e26417"

@@ -4,6 +4,7 @@ import styles from './App.module.css';
 
 import background from "./resources/images/main_background.png"
 import Section from "./components/Section";
+import {BrowserRouter, Route} from "react-router-dom";
 
 class App extends React.Component {
     constructor(props) {
@@ -23,7 +24,7 @@ class App extends React.Component {
         window.addEventListener("resize", this.updateBackgroundStyle);
         document.addEventListener("DOMContentLoaded", this.updateBackgroundStyle);
         
-        document.querySelector("html").style.fontSize = Math.min(window.innerWidth / 41.1, 17) + "px"; 
+        document.querySelector("html").style.fontSize = Math.min(window.innerWidth / 41.1, 15) + "px"; 
     }
 
     componentWillUnmount() {
@@ -83,7 +84,10 @@ class App extends React.Component {
                         marginTop: "-" + Math.min(this.state.appScrollTop / 2.5, 200) + "px"
                     }} className={[styles.SecondArea].join(" ")}>
 
-                        <Section/>
+                        <BrowserRouter>
+                            <Route exact path="/" render={(props) => <Section {...props}/>}/>
+                            <Route path={"/:type"} render={(props) => <Section {...props}/>}/>
+                        </BrowserRouter>
 
                     </div>
 
