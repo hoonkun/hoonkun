@@ -1,7 +1,6 @@
 import React from "react";
 
 import styles from "../stylesheets/Sections.module.css";
-import {BrowserRouter, Redirect} from "react-router-dom";
 import Projects from "./Projects";
 
 import twitter_bg from "../resources/images/twitter/twitter_photo_bg.png";
@@ -14,12 +13,12 @@ class Section extends React.Component {
     constructor(props) {
         super(props);
 
-        this.PATH_NORMAL = "";
-        this.PATH_TWITTER = "twitter";
+        this.PATH_NORMAL = "/";
+        this.PATH_TWITTER = "/twitter";
 
         this.state = {
-            type: props.match.params.type,
-            visible_type: props.match.params.type,
+            type: props.type,
+            visible_type: props.type,
             indicator_width: 50,
             indicator_pos: 20,
             indicator_color: "#e26417"
@@ -27,11 +26,15 @@ class Section extends React.Component {
 
         this.ref_tab_normal = React.createRef();
         this.ref_tab_twitter = React.createRef();
+        
+        this.fontSize = Math.min(window.innerWidth / 41.1, 15);
 
         this.onSectionControllerItemSelected = this.onSectionControllerItemSelected.bind(this);
     }
 
     componentDidMount() {
+        document.querySelector("html").style.fontSize = this.fontSize + "px";
+        
         this.setState(this.state.type === this.PATH_TWITTER ? {
             indicator_width: this.ref_tab_twitter.current.offsetWidth,
             indicator_pos: this.ref_tab_twitter.current.offsetLeft,
@@ -47,11 +50,6 @@ class Section extends React.Component {
 
         return (
             <div>
-
-                <BrowserRouter>
-                    <Redirect to="/"/>
-                </BrowserRouter>
-
                 <div className={styles.SectionController}>
 
                     <div className={styles.SectionControllerItemGroup}>
@@ -80,7 +78,7 @@ class Section extends React.Component {
                          style={{
                              width: this.state.indicator_width + "px",
                              backgroundColor: this.state.indicator_color,
-                             left: this.state.indicator_pos - 20 + "px"
+                             left: this.state.indicator_pos - this.fontSize * 2 + "px"
                          }}/>
                 </div>
 

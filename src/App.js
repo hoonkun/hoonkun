@@ -4,7 +4,7 @@ import styles from './App.module.css';
 
 import background from "./resources/images/main_background.png"
 import Section from "./components/Section";
-import {BrowserRouter, Route} from "react-router-dom";
+import {HashRouter, Route} from "react-router-dom";
 
 class App extends React.Component {
     constructor(props) {
@@ -23,8 +23,6 @@ class App extends React.Component {
     componentDidMount() {
         window.addEventListener("resize", this.updateBackgroundStyle);
         document.addEventListener("DOMContentLoaded", this.updateBackgroundStyle);
-        
-        document.querySelector("html").style.fontSize = Math.min(window.innerWidth / 41.1, 15) + "px"; 
     }
 
     componentWillUnmount() {
@@ -84,10 +82,10 @@ class App extends React.Component {
                         marginTop: "-" + Math.min(this.state.appScrollTop / 2.5, 200) + "px"
                     }} className={[styles.SecondArea].join(" ")}>
 
-                        <BrowserRouter>
-                            <Route exact path="/" render={(props) => <Section {...props}/>}/>
-                            <Route path={"/:type"} render={(props) => <Section {...props}/>}/>
-                        </BrowserRouter>
+                        <HashRouter>
+                            <Route exact path="/" render={() => <Section type="/"/>}/>
+                            <Route path="/twitter" render={() => <Section type="/twitter"/>}/>
+                        </HashRouter>
 
                     </div>
 
