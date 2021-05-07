@@ -197,6 +197,20 @@ class Section extends React.Component {
                             <Projects/>
                         </div>
 
+                        <div style={{height: "20px"}}/>
+
+                        <div className={styles.SectionTitle}>
+                            <span>(대충 연락처라는 뜻)</span>
+                        </div>
+                        
+                        <div className={styles.SectionContent}>
+                            예전에는 바깥고리나 연락처가 많았는데 지금은 아래 둘 밖에 없네요. 아무튼 연락하실 일이 있으면 아래의 메일이나 트위터 DM으로 부탁드리겠습니다.
+                            <ul style={{marginTop: "10px"}}>
+                                <li>Email: <a href="mailto:herokun.user@gmail.com">herokun.user@gmail.com</a></li>
+                                <li>Twitter: <a href="https://twitter.com/hoon_stream">@hoon_stream</a></li>
+                            </ul>
+                        </div>
+
                     </div>
 
                     <div className={[
